@@ -19,10 +19,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Exemple de commande de déploiement
-                sh 'scp target/myapp.jar user@server:/path/to/deploy/'
+                // sh 'scp target/myapp.jar user@server:/path/to/deploy/'
                 // Ou une commande Docker
                 // sh 'docker build -t myapp:latest .'
                 // sh 'docker run -d -p 8080:8080 myapp:latest'
+                echo 'Deploying....'
             }
         }
     }
