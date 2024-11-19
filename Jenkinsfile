@@ -11,7 +11,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'java -version' // Utilisez bat 'java -version' sur Windows
+                bat 'mvn -version'  // Utilisez bat 'mvn -version' sur Windows
+                bat 'mvn clean package'
                // echo 'mvn....'
             }
         }
