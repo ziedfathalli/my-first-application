@@ -1,5 +1,7 @@
 C:\Users\ADMIN\workspace\my-first-application\backend\src\main\java\com\example\userService\model\UserDB.java
+C:\Users\ADMIN\workspace\my-first-application\backend\src\main\java\com\example\config\SecurityConfig.java
 C:\Users\ADMIN\workspace\my-first-application\backend\src\main\java\com\example\Application.java
 C:\Users\ADMIN\workspace\my-first-application\backend\src\main\java\com\example\userService\service\UserService.java
 C:\Users\ADMIN\workspace\my-first-application\backend\src\main\java\com\example\userService\repository\UserRepository.java
 C:\Users\ADMIN\workspace\my-first-application\backend\src\main\java\com\example\userService\controller\UserController.java
+C:\Users\ADMIN\workspace\my-first-application\backend\src\main\java\com\example\authentification\HomeController.java
