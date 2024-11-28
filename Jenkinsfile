@@ -46,7 +46,7 @@ pipeline {
                 // Ou une commande Docker
                 // sh 'docker build -t com.example.myapp:latest .'
                 // sh 'docker run -d -p 8080:8080 com.example.myapp:latest'
-                echo 'Deploying.....'
+                echo 'Deploying....'
             }
         }
     }
