@@ -26,19 +26,26 @@ pipeline {
                 echo 'Test....'
             }
         }
+        stage('Build Frontend') {
+                    steps {
+                        dir('frontend') {
+                            sh 'docker build -t zied1983/myapps/frontend:latest .'
+                        }
+                    }
+                }
         stage('Build Backend') {
                     steps {
                         dir('backend') {
                             bat 'docker build -t zied1983/myapps/backend:latest .'
                         }
                     }
-                }
-                stage('Push Images') {
+        }
+        stage('Push Images') {
                     steps {
-                        bat 'docker push ${DOCKER_REGISTRY}/frontend:latest'
-                        bat 'docker push ${DOCKER_REGISTRY}/backend:latest'
-                    }
-                }
+                        bat 'docker push zied1983/myapps/frontend:latest'
+                        bat 'docker push zied1983/myapps/backend:latest'
+                  }
+        }
         stage('Deploy') {
             steps {
                 // Exemple de commande de déploiement
