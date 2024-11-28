@@ -40,6 +40,14 @@ pipeline {
                         }
                     }
         }
+        stage('Login to Docker Hub') {
+                    steps {
+                        withCredentials([usernamePassword(credentialsId: 'dockerhub-token', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                            bat 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                        }
+                    }
+                }
+
         stage('Push Images') {
                     steps {
                         bat 'docker push zied1983/myapps/frontend:latest'
