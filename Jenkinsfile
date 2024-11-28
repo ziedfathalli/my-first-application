@@ -29,7 +29,7 @@ pipeline {
         stage('Build Frontend') {
                     steps {
                         dir('frontend') {
-                            sh 'docker build -t zied1983/myapps/frontend:latest .'
+                            bat 'docker build -t zied1983/myapps/frontend:latest .'
                         }
                     }
                 }
