@@ -1,5 +1,8 @@
 pipeline {
     agent any
+     environment {
+            DOCKER_REGISTRY = 'zied1983/myapps'
+        }
     triggers {
         githubPush()  // Ceci déclenche le pipeline à chaque push sur GitHub;
     }
@@ -23,13 +26,26 @@ pipeline {
                 echo 'Test....'
             }
         }
+        stage('Build Backend') {
+                    steps {
+                        dir('backend') {
+                            bat 'docker build -t ${zied1983/myapps}/backend:latest .'
+                        }
+                    }
+                }
+                stage('Push Images') {
+                    steps {
+                        bat 'docker push ${DOCKER_REGISTRY}/frontend:latest'
+                        bat 'docker push ${DOCKER_REGISTRY}/backend:latest'
+                    }
+                }
         stage('Deploy') {
             steps {
                 // Exemple de commande de déploiement
-                // sh 'scp target/myapp.jar user@server:/path/to/deploy/'
+                // sh 'scp target/com.example.myapp.jar user@server:/path/to/deploy/'
                 // Ou une commande Docker
-                // sh 'docker build -t myapp:latest .'
-                // sh 'docker run -d -p 8080:8080 myapp:latest'
+                // sh 'docker build -t com.example.myapp:latest .'
+                // sh 'docker run -d -p 8080:8080 com.example.myapp:latest'
                 echo 'Deploying....'
             }
         }

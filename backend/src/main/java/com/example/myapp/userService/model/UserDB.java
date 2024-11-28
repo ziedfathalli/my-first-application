@@ -1,4 +1,4 @@
-package com.example.userService.model;
+package com.example.myapp.userService.model;
 
 import jakarta.persistence.*;
 

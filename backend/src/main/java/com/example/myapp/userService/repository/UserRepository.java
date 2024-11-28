@@ -1,6 +1,6 @@
-package com.example.userService.repository;
+package com.example.myapp.userService.repository;
 
-import com.example.userService.model.UserDB;
+import com.example.myapp.userService.model.UserDB;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
