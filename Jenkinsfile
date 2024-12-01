@@ -4,7 +4,7 @@ pipeline {
             DOCKER_REGISTRY = 'zied1983/myapps'
         }
     triggers {
-        githubPush()  // Ceci déclenche le pipeline à chaque push sur GitHub;
+        githubPush()  // Ceci déclenche le pipeline à chaque push sur GitHub ;
     }
     stages {
         stage('Checkout') {
