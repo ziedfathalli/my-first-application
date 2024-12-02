@@ -51,9 +51,9 @@ pipeline {
 
         stage('Push Images') {
                     steps {
-                        bat 'docker tag local-image:latest zied1983/frontend:latest'
+                        bat 'docker tag zied1983/frontend:latest zied1983/frontend:latest'
                         bat 'docker push zied1983/frontend:latest'
-                        bat 'docker tag local-image:latest zied1983/backend:latest'
+                        bat 'docker tag zied1983/backend:latest zied1983/backend:latest'
                         bat 'docker push zied1983/backend:latest'
                   }
         }
