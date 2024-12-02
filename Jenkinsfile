@@ -51,8 +51,10 @@ pipeline {
 
         stage('Push Images') {
                     steps {
-                        bat 'docker --debug push zied1983/myapps/frontend:latest'
-                        bat 'docker push zied1983/myapps/backend:latest'
+                        bat 'docker tag local-image:latest zied1983/frontend:latest'
+                        bat 'docker push zied1983/frontend:latest'
+                        bat 'docker tag local-image:latest zied1983/backend:latest'
+                        bat 'docker push zied1983/backend:latest'
                   }
         }
         stage('Deploy') {
