@@ -29,14 +29,14 @@ pipeline {
         stage('Build Frontend') {
                     steps {
                         dir('frontend') {
-                            bat 'docker build -t zied1983/myapps/frontend:latest .'
+                            bat 'docker build -t zied1983/frontend:latest .'
                         }
                     }
                 }
         stage('Build Backend') {
                     steps {
                         dir('backend') {
-                            bat 'docker build -t zied1983/myapps/backend:latest .'
+                            bat 'docker build -t zied1983/backend:latest .'
                         }
                     }
         }
