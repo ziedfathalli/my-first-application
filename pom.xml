@@ -7,7 +7,7 @@
     <artifactId>my-first-application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>my first application</name>
+    <name>My first application</name>
 
     <!-- Modules -->
     <modules>
