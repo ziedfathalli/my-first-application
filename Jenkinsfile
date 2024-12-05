@@ -16,7 +16,8 @@ pipeline {
             steps {
                 bat 'java -version' // Utilisez bat 'java -version' sur Windows
                 bat 'mvn -version'  // Utilisez bat 'mvn -version' sur Windows
-                bat 'mvn clean package'
+                bat 'mvn clean install'
+                bat 'mvn clean package spring-boot:repackage -pl backend -am'
                // echo 'mvn....'
             }
         }
