@@ -11,7 +11,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'yo-mess-bundle.js',
+    filename: 'my-first-application-bundle.js',
   },
   module: {
     rules: [
@@ -73,7 +73,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'yo-mess-style.css',
+      filename: 'my-first-application-style.css',
     }),
   ],
   optimization: {

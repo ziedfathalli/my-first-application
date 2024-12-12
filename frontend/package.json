@@ -7,7 +7,7 @@
     "*.css",
     "*.scss"
   ],
-  "proxy": "http://localhost:8081",
+  "proxy": "http://localhost:8080",
   "scripts": {
     "start": "npm run start:dev",
     "start:dev": "webpack serve -c webpack/webpack.dev.config.js --progress --color",
