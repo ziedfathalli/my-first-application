@@ -19,6 +19,7 @@ import Path from './Path';
 const {
   USER_LOGIN_PATH,
   MESSAGES_DASHBOARD_PATH,
+  USER_LIST_PATH,
 } = Path;
 
 const {
@@ -34,6 +35,16 @@ const Router = () => (
   >
     <BrowserRouter>
       <Switch>
+        <Route
+          exact
+          path={USER_LIST_PATH}
+          component={(props) => (
+            <UsersListePage
+              {...props}
+              page="UsersListePage"
+            />
+          )}
+        />
         <Route
           exact
           path={USER_LOGIN_PATH}

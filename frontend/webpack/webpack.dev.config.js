@@ -64,6 +64,13 @@ module.exports = {
     historyApiFallback: true,
     open: true,
     hot: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8081', // Backend Spring Boot
+        changeOrigin: true, // Permet de changer l'origine de la requête (utile pour CORS)
+        pathRewrite: { '^/aa': '', }, // Supprime '/api' dans l'URL avant de la rediriger
+      },
+    },
   },
   resolve: {
     extensions: [

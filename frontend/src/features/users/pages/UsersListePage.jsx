@@ -12,6 +12,13 @@ import {
 } from '../redux';
 import UserPropTypes from '../commons/UserPropTypes';
 import '../components/UserForm.scss';
+// eslint-disable-next-line import/order
+import loadable from '@loadable/component';
+
+const UserListForm = loadable((props) => import(`../components/${props.path}`), {
+  fallback: <Spin spinning />,
+  cacheKey: (props) => props.path,
+});
 
 const {
   UserListFragment,
@@ -38,8 +45,8 @@ class UsersListePage extends Component {
       const {
         userListLoading,
         userList,
+        userListError,
       } = this.props;
-      consle.log('testtt result', userList);
       return (
         <AppLayout
           showSideBar={false}
@@ -48,7 +55,14 @@ class UsersListePage extends Component {
               spinning={userListLoading}
               size="large"
             >
-              <div className="user_form_login--page" />
+              <div className="user_form_login--page">
+                <UserListForm
+                  path="UserListForm"
+                  userListLoading={userListLoading}
+                  userList={userList}
+                  userListError={userListError}
+                />
+              </div>
             </Spin>
           )}
         />
